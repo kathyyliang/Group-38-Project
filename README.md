@@ -10,6 +10,6 @@ Tae Min (Thomas) Kim
 Vishal Goel						
 
 ## Screenshots
-<img src="screenshots/device-2016-05-06-212329.png" height="300" alt="screenshot"/> <img src="screenshots/device-2016-05-06-225309.png" height="300" alt="screenshot"/> <img src="screenshots/device-2016-05-06-225347.png" height="300" alt="screenshot"/>
+<img src="Screenshots/device-2016-05-06-212329.png" height="300" alt="screenshot"/> <img src="Screenshots/device-2016-05-06-225309.png" height="300" alt="screenshot"/> <img src="Screenshots/device-2016-05-06-225347.png" height="300" alt="screenshot"/>
 
-<img src="screenshots/device-2016-05-06-225520.png" height="300" alt="screenshot"/> <img src="screenshots/device-2016-05-06-225832.png" height="300" alt="screenshot"/> <img src="screenshots/device-2016-05-06-231604.png" height="300" alt="screenshot"/>
+<img src="Screenshots/device-2016-05-06-225520.png" height="300" alt="screenshot"/> <img src="Screenshots/device-2016-05-06-225832.png" height="300" alt="screenshot"/> <img src="Screenshots/device-2016-05-06-231604.png" height="300" alt="screenshot"/>
