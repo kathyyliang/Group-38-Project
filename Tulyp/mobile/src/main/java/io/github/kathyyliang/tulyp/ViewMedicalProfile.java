@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -21,10 +22,9 @@ public class ViewMedicalProfile extends AppCompatActivity {
     protected ArrayList<String> height;
     protected String medication;
     protected String age;
+    protected User patient;
     ListView patientList;
     MedicalProfileAdapter adapter;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,38 +38,25 @@ public class ViewMedicalProfile extends AppCompatActivity {
         headings[5] = "Medication";
         Intent intent = getIntent();
 
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Medical Profile");
         setSupportActionBar(toolbar);
 
-//<<<<<<< HEAD
         TextView nameView = (TextView) findViewById(R.id.name_profile);
         nameView.setText(intent.getStringExtra("name"));
         weight = intent.getStringExtra("weight");
         contact = intent.getStringExtra("contact");
         age = intent.getStringExtra("age");
-        gender = intent.getStringExtra("weight");
+        gender = intent.getStringExtra("gender");
         height = intent.getStringArrayListExtra("height");
-
-
+        patient = (User) intent.getSerializableExtra("patient");
 
         patientList = (android.widget.ListView) findViewById(R.id.medicalprofile);
         adapter = new MedicalProfileAdapter(this, headings, height, weight, age, gender, contact, medication, patientID);
         patientList.setAdapter(adapter);
 
-//=======
         ListView listView = (ListView) findViewById(R.id.medicalprofile);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String text = (String) ((TextView) view).getText();
-                if (text.equalsIgnoreCase("Medication")) {
-                    Intent intent = new Intent(getBaseContext(), DoctorMedication.class);
-                    startActivity(intent);
-                }
-            }
-        });
-//>>>>>>> origin/master
+        listView.setOnItemClickListener(new MyOnItemClickListener(getBaseContext(), patient));
     }
+
 }

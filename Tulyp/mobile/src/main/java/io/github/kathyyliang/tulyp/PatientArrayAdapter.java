@@ -2,6 +2,7 @@ package io.github.kathyyliang.tulyp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
  * Created by jenny0322 on 5/3/16.
  */
 public class PatientArrayAdapter extends BaseAdapter {
+    protected ArrayList<User> patients;
     protected ArrayList<String> names;
     protected ArrayList<String> medication;
     protected ArrayList<String> age;
@@ -26,8 +28,9 @@ public class PatientArrayAdapter extends BaseAdapter {
     protected ArrayList<Integer> gender;
     protected ArrayList<ArrayList<String>> height;
 
-    public PatientArrayAdapter(Context context, ArrayList<String> names, ArrayList<String> medication, ArrayList<String> patientID, ArrayList<String> age, ArrayList<Integer> gender, ArrayList<ArrayList<String>> height, ArrayList<String> weight, ArrayList<String> contact){
+    public PatientArrayAdapter(Context context, ArrayList<User> patients, ArrayList<String> names, ArrayList<String> medication, ArrayList<String> patientID, ArrayList<String> age, ArrayList<Integer> gender, ArrayList<ArrayList<String>> height, ArrayList<String> weight, ArrayList<String> contact){
         this.context = context;
+        this.patients = patients;
         this.medication = medication;
         this.age = age;
         this.names = names;
@@ -80,13 +83,14 @@ public class PatientArrayAdapter extends BaseAdapter {
                 //Send Toast or Launch Activity here
                 Intent detail = new Intent(context, ViewMedicalProfile.class);
                 detail.putExtra("name", names.get(position));
-                detail.putExtra("age", names.get(position));
+                detail.putExtra("age", age.get(position));
                 detail.putExtra("medication", medication.get(position));
                 detail.putExtra("gender", Integer.toString(gender.get(position)));
                 detail.putExtra("height", height.get(position));
                 detail.putExtra("weight", weight.get(position));
                 detail.putExtra("contact", contact.get(position));
                 detail.putExtra("patientID", patientID.get(position));
+                detail.putExtra("patient", patients.get(position));
                 context.startActivity(detail);
 
 

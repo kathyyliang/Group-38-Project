@@ -90,8 +90,6 @@ public class DoctorView extends AppCompatActivity {
                         contact.add(u.getEmail());
                         weight.add(u.getWeight());
 
-
-//                        medication.add((String) u.getMedications().keySet().toArray()[0]);
                         Set meds = u.getMedications().keySet();
                         if (meds == null || meds.size() == 0) {
                             medication.add("");
@@ -113,7 +111,7 @@ public class DoctorView extends AppCompatActivity {
 
     private void updatePatientList() {
         final ListView patientList = (android.widget.ListView) findViewById(R.id.patientList);
-        final PatientArrayAdapter adapter = new PatientArrayAdapter(this, names, medication, patientIDs, age, gender, height, weight, contact);
+        final PatientArrayAdapter adapter = new PatientArrayAdapter(this, patients, names, medication, patientIDs, age, gender, height, weight, contact);
         patientList.setAdapter(adapter);
     }
 

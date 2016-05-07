@@ -2,6 +2,7 @@ package io.github.kathyyliang.tulyp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,13 +74,15 @@ public class MedicalProfileAdapter extends BaseAdapter {
                 detail.setText("Male");
             }else if (gender.equals("1")){
                 detail.setText("Female");
-            }else{
+            }else if (gender.equals("2")){
                 detail.setText("Others");
+            } else {
+                Log.i("GENDER", gender);
             }
         }else if (headings[position].equals("Weight")) {
             detail.setText(weight + " lbs");
         }else if (headings[position].equals("Height")) {
-            detail.setText(height.get(0) + " in" + height.get(1) + " ft" );
+            detail.setText(height.get(0) + " ft " + height.get(1) + " in" );
         }else if (headings[position].equals("Contact")) {
             detail.setText(contact);
         }else if (headings[position].equals("Medication")) {

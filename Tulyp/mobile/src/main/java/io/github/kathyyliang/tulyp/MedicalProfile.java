@@ -52,8 +52,8 @@ public class MedicalProfile extends AppCompatActivity {
 
             pounds.setText(user.getWeight());
         }
-            Spinner spinner = (Spinner) findViewById(R.id.spinner);
-            spinner.setSelection(user.getGender());
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        spinner.setSelection(user.getGender());
 
         Button button = (Button) findViewById(R.id.savebutton);
         button.setOnClickListener(new View.OnClickListener() {

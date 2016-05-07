@@ -1,11 +1,13 @@
 package io.github.kathyyliang.tulyp;
 
 import android.graphics.Bitmap;
+import android.os.Parcelable;
 import android.util.Log;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.firebase.client.Firebase;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,7 +17,7 @@ import java.util.List;
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class User {
+public class User implements Serializable {
     private String birthdate;
     private String name;
     private String email;
@@ -157,6 +159,8 @@ public class User {
     public void setMedications(HashMap<String, Drug> medications) {
         this.medications = medications;
     }
+
+
 
 //    public String getTremordata() {
 //        return tremordata;
